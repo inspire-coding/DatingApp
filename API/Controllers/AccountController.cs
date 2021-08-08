@@ -7,6 +7,7 @@ using System.Text;
 using API.DTOs;
 using Microsoft.EntityFrameworkCore;
 using API.Interfaces;
+using System;
 
 namespace API.Controllers
 {
@@ -25,11 +26,12 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto regsiterDto)
         {
+            Console.WriteLine(regsiterDto);
             if (await UserExists(regsiterDto.Username))
             {
                 return BadRequest("Username is taken!");
             }
-
+            Console.WriteLine(regsiterDto);
             using var hmac = new HMACSHA512();
 
             var user = new AppUser
