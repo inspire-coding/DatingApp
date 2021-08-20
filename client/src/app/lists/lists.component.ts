@@ -10,10 +10,10 @@ import { MembersService } from '../_services/members.service';
 })
 export class ListsComponent implements OnInit {
   members: Partial<Member[]>;
+  pagination: Pagination;
   predicate = 'liked';
   pageNumber = 1;
   pageSize = 5;
-  pagination: Pagination;
 
   constructor(private memberService: MembersService) { }
 
