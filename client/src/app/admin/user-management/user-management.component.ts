@@ -44,8 +44,8 @@ export class UserManagementComponent implements OnInit {
       };
       console.log(rolesToUpdate);
       if(rolesToUpdate) {
-        console.log(user.userName);
-        this.adminService.updateUserRoles(user.userName, rolesToUpdate.roles).subscribe(() => {
+        console.log(user.username);
+        this.adminService.updateUserRoles(user.username, rolesToUpdate.roles).subscribe(() => {
           user.roles = [...rolesToUpdate.roles]
         })
       }
